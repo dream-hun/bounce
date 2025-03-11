@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bounce Africa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preload" href="https://rsms.me/inter/inter.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
 <body class="bg-black text-white">
@@ -19,7 +21,7 @@
         <!-- Video Background -->
         <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
             <iframe id="youtube-player" class="w-full h-full scale-150"
-                src="https://www.youtube.com/embed/Z1AMSmnkT6Q?autoplay=1&controls=0&mute=1&loop=1&playlist=Z1AMSmnkT6Q&playsinline=1"
+                src="https://www.youtube.com/embed/0OJyfdZh-kE?autoplay=1&controls=0&mute=1&loop=1&playlist=0OJyfdZh-kE&playsinline=1"
                 title="Basketball Highlights" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
