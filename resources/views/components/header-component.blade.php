@@ -22,18 +22,16 @@
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">HOME</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">GAMES</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">NEWS</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">CLUBS</a>
+                <a href="#" class="text-white hover:text-gray-300 font-semibold">Teams</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">STANDINGS</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">STATS</a>
+
             </div>
 
             <!-- Desktop Right Menu -->
             <div class="hidden lg:flex items-center space-x-6">
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">MVP VOTE</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">1-ON-1</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">TICKETS</a>
+
+                <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">MORE</a>
             </div>
         </div>
 
@@ -48,14 +46,11 @@
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">HOME</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">GAMES</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">NEWS</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">CLUBS</a>
+                <a href="#" class="text-white hover:text-gray-300 font-semibold">Teams</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">STANDINGS</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">STATS</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">MVP VOTE</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">1-ON-1</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">TICKETS</a>
+
+                <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">MORE</a>
             </div>
         </div>
     </nav>
