@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="bi bi-columns-gap"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
+            <a href="{{ route('admin.home') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
@@ -16,13 +16,6 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="bi bi-cart-dash-fill"></i>
-                <span class="badge badge-primary navbar-badge">{{ $cartCount }}</span>
-            </a>
-
-        </li>
 
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
@@ -56,11 +49,7 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="bi bi-ui-checks-grid"></i>
-            </a>
-        </li>
+
     </ul>
 </nav>
 <!-- /.navbar -->

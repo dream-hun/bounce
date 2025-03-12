@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:auto !important;">
     <!-- Brand Logo -->
-    <a href="{{ route('dashboard') }}" class="brand-link">
+    <a href="{{ route('admin.home') }}" class="brand-link">
         <img src="{{ asset('logo.webp') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ Auth::user()->getGravatarAttribute() }}" class="img-circle elevation-2" alt="User Image">
+                <img src="" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -37,7 +37,7 @@
                 data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}"
+                    <a href="{{ route('admin.home') }}"
                         class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
                         <i class="bi bi-speedometer"></i>
                         <p>
@@ -45,25 +45,47 @@
                         </p>
                     </a>
                 </li>
-                @can('domain_pricing_access')
+                @can('team_access')
                     <li class="nav-item">
-                        <a href="{{ route('admin.domain-pricings.index') }}"
-                            class="nav-link {{ request()->is('admin/domain-pricings*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.teams.index') }}"
+                            class="nav-link {{ request()->is('admin/teams*') ? 'active' : '' }}">
                             <i class="bi bi-cash-coin"></i>
                             <p>
-                                Domain Pricing
+                                Teams
                             </p>
                         </a>
                     </li>
                 @endcan
 
-                @can('domain_access')
+                @can('game_access')
                     <li class="nav-item">
-                        <a href="{{ route('admin.domains.index') }}"
-                            class="nav-link {{ request()->is('admin/domains*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.games.index') }}"
+                            class="nav-link {{ request()->is('admin/games*') ? 'active' : '' }}">
+                            <i class="bi bi-dice-6-fill"></i>
+                            <p>
+                                Games
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('event_access')
+                    <li class="nav-item">
+                        <a href="{{ route('admin.events.index') }}"
+                           class="nav-link {{ request()->is('admin/events*') ? 'active' : '' }}">
+                            <i class="bi bi-calendar-date"></i>
+                            <p>
+                                Events
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('partner_access')
+                    <li class="nav-item">
+                        <a href="{{ route('admin.partners.index') }}"
+                           class="nav-link {{ request()->is('admin/partners*') ? 'active' : '' }}">
                             <i class="bi bi-globe2"></i>
                             <p>
-                                Domains
+                                Partners
                             </p>
                         </a>
                     </li>
@@ -79,6 +101,7 @@
                         </a>
                     </li>
                 @endcan
+
                 @can('user_management_access')
                     <li class="nav-item {{ (request()->is('admin/permissions*') || request()->is('admin/roles*') || request()->is('admin/users*')) ? 'menu-open' : '' }}">
                         <a href="#" class="nav-link {{ (request()->is('admin/permissions*') || request()->is('admin/roles*') || request()->is('admin/users*')) ? 'active' : '' }}">
