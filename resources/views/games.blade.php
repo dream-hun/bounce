@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games - Bounce Africa</title>
-   
-   <!-- Scripts -->
-   @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Fonts -->
-    <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-</head>
-
-<body class="bg-black text-white">
-    <!-- Navigation Bar -->
-    <x-header-component/>
-
+<x-front-layout>
     <!-- Upcoming Games Section -->
     <section class="bg-gray-900 py-16">
         <div class="container mx-auto px-6">
@@ -30,7 +13,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Nairobi Titans</span>
                         </div>
                         <div class="text-center">
@@ -38,14 +21,14 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Mombasa Warriors</span>
                         </div>
                     </div>
                     <div class="mt-6 flex justify-between items-center">
                         <span class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Nyayo Stadium</span>
                         <a href="#"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
+                           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
                             Tickets</a>
                     </div>
                 </div>
@@ -59,7 +42,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Kisumu Lakers</span>
                         </div>
                         <div class="text-center">
@@ -67,14 +50,14 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Eldoret Eagles</span>
                         </div>
                     </div>
                     <div class="mt-6 flex justify-between items-center">
                         <span class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Kisumu Arena</span>
                         <a href="#"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
+                           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
                             Tickets</a>
                     </div>
                 </div>
@@ -88,7 +71,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Nakuru Bulls</span>
                         </div>
                         <div class="text-center">
@@ -96,14 +79,14 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Nairobi Titans</span>
                         </div>
                     </div>
                     <div class="mt-6 flex justify-between items-center">
                         <span class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Nakuru Stadium</span>
                         <a href="#"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
+                           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-300">Buy
                             Tickets</a>
                     </div>
                 </div>
@@ -125,7 +108,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Mombasa Warriors</span>
                             <span class="text-2xl font-bold text-blue-400">89</span>
                         </div>
@@ -134,7 +117,7 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Eldoret Eagles</span>
                             <span class="text-2xl font-bold text-gray-400">82</span>
                         </div>
@@ -155,7 +138,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Kisumu Lakers</span>
                             <span class="text-2xl font-bold text-blue-400">95</span>
                         </div>
@@ -164,7 +147,7 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Nakuru Bulls</span>
                             <span class="text-2xl font-bold text-gray-400">88</span>
                         </div>
@@ -185,7 +168,7 @@
                     <div class="flex items-center justify-between space-x-4">
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 1"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Nairobi Titans</span>
                             <span class="text-2xl font-bold text-blue-400">102</span>
                         </div>
@@ -194,7 +177,7 @@
                         </div>
                         <div class="flex flex-col items-center flex-1">
                             <img src="https://via.placeholder.com/64" alt="Team 2"
-                                class="w-16 h-16 rounded-full mb-2">
+                                 class="w-16 h-16 rounded-full mb-2">
                             <span class="font-semibold text-center">Kisumu Lakers</span>
                             <span class="text-2xl font-bold text-gray-400">97</span>
                         </div>
@@ -209,14 +192,13 @@
 
             <div class="mt-8 text-center">
                 <a href="#"
-                    class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition duration-300">
+                   class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition duration-300">
                     View All Games
                 </a>
             </div>
         </div>
     </section>
 
-    <x-footer-component/>
-</body>
+</x-front-layout>
 
-</html>
+

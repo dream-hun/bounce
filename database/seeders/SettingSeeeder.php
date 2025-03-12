@@ -13,7 +13,7 @@ class SettingSeeeder extends Seeder
     {
         $settings = [
             [
-                'email'=>''
+                'email' => '',
 
             ],
         ];
