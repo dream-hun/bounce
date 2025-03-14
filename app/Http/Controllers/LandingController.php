@@ -12,7 +12,8 @@ class LandingController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $events=Event::orderBy('created_at','DESC')->get();
-        return view('welcome',['events'=>$events]);
+        $events = Event::orderBy('created_at', 'DESC')->get();
+
+        return view('welcome', ['events' => $events]);
     }
 }

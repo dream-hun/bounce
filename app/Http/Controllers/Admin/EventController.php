@@ -8,8 +8,11 @@ use App\Http\Requests\Admin\MassDestroyEventRequest;
 use App\Http\Requests\Admin\StoreEventRequest;
 use App\Http\Requests\Admin\UpdateEventRequest;
 use App\Models\Event;
-use Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -33,12 +36,22 @@ class EventController extends Controller
         return view('admin.events.create');
     }
 
+    /**
+     * @throws FileIsTooBig
+     * @throws FileDoesNotExist
+     */
     public function store(StoreEventRequest $request)
     {
         $event = Event::create($request->all());
 
         if ($request->input('featured_image', false)) {
-            $event->addMedia(storage_path('tmp/uploads/'.basename($request->input('featured_image'))))->toMediaCollection('featured_image');
+            $event->addMedia(storage_path('tmp/uploads/'.basename($request->input('featured_image'))))
+                ->withManipulations([
+                    '*' => function ($image) {
+                        $image->fit(Fit::Contain, 200, 200);
+                    },
+                ])
+                ->toMediaCollection('featured_image');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -55,6 +68,10 @@ class EventController extends Controller
         return view('admin.events.edit', compact('event'));
     }
 
+    /**
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
+     */
     public function update(UpdateEventRequest $request, Event $event)
     {
         $event->update($request->all());

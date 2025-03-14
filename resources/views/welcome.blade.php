@@ -111,7 +111,7 @@
                         class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:transform hover:scale-105 transition duration-300">
                         <div class="relative">
                             @if($event->featured_image)
-                                <img src="{{ $event->featured_image->url }}" alt="{{ $event->title }}"
+                                <img src="{{ $event->getFirstMediaUrl('featured_image')}}" alt="{{ $event->title }}"
                                      class="w-full h-48 object-cover">
                             @else
                                 <img src="https://via.placeholder.com/600x300" alt="{{ $event->title }}"

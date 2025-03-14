@@ -12,7 +12,8 @@ class BlogController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $articles=Blog::where('status','published')->orderBy('created_at','DESC')->get();
-        return view('blog',compact('articles'));
+        $articles = Blog::where('status', 'published')->orderBy('created_at', 'DESC')->get();
+
+        return view('blog', compact('articles'));
     }
 }
