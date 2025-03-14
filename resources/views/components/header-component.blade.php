@@ -31,7 +31,7 @@
             <div class="hidden lg:flex items-center space-x-6">
 
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
+                <a href="https://bounceafrica.hustlesasa.shop" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
                 <a href="{{ route('about') }}" class="text-white hover:text-gray-300 font-semibold">ABOUT US</a>
             </div>
         </div>
@@ -46,12 +46,12 @@
             <div class="flex flex-col space-y-4">
                 <a href="{{route('welcome')}}" class="text-white hover:text-gray-300 font-semibold">HOME</a>
                 <a href="{{route('games')}}" class="text-white hover:text-gray-300 font-semibold">GAMES</a>
-                <a href=""{{route('blog')}} class="text-white hover:text-gray-300 font-semibold">NEWS</a>
+                <a href="{{route('blog')}}" class="text-white hover:text-gray-300 font-semibold">NEWS</a>
                 <a href="{{ route('teams') }}" class="text-white hover:text-gray-300 font-semibold">TEAMS</a>
 
 
                 <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
+                <a href="https://bounceafrica.hustlesasa.shop/" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
                 <a href="{{ route('about') }}" class="text-white hover:text-gray-300 font-semibold">ABOUT US</a>
             </div>
         </div>
