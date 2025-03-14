@@ -1,10 +1,10 @@
 <div>
-    <nav x-data="{ mobileMenuOpen: false }" class="bg-gray-900 py-4 px-6 border-b border-gray-800">
+    <nav x-data="{ mobileMenuOpen: false }" class="bg-black py-4 px-6 border-b border-gray-800">
         <!-- Desktop Navigation -->
         <div class="flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center">
-                <img src="{{ asset('bounce_dark.webp') }}" alt="Bounce Logo" class="h-12">
+            <a href="{{route('welcome')}}" class="flex items-center">
+                <img src="{{ asset('logo.webp') }}" alt="Bounce Logo" class="h-14 w-auto">
             </a>
 
             <!-- Mobile Menu Button -->
