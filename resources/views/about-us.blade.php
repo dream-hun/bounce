@@ -12,22 +12,40 @@
         <!-- Header section -->
         <div class="px-6 pt-14 lg:px-8">
             <div class="mx-auto max-w-4xl pt-24 text-center sm:pt-40">
-                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welcome to Bounce Africa, where basketball dreams come true!</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-300">Join us in celebrating the spirit of basketball across Africa. From thrilling games to community events, we bring the best of basketball to you.</p>
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welcome to Bounce Africa, where  dreams takes a flight!</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-300">
+
+                    Join us in celebrating the spirit of basketball across Africa. From thrilling games to community events, we bring the best of basketball to you.
+
+
+                </p>
             </div>
         </div>
 
         <!-- Content section -->
         <div class="mx-auto mt-20 max-w-7xl px-6 lg:px-8 pb-14">
             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                <div class="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 lg:max-w-none lg:grid-cols-2">
+                <div class="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 lg:max-w-none lg:grid-cols-1">
                     <div>
-                        <p>At Bounce Africa, we are passionate about basketball. Our league brings together the best talent from across the continent, showcasing their skills and dedication to the sport. We believe in the power of basketball to unite communities and inspire the next generation of athletes.</p>
-                        <p class="mt-8">Our mission is to elevate the game of basketball in Africa, providing opportunities for players to compete at the highest level and for fans to experience the excitement of live games. Join us as we continue to grow and make a positive impact on the sport.</p>
+                        <p>
+                            Welcome to Bounce Africa, the epicenter of electrifying 3x3 basketball and urban sports
+                            entertainment! We are Africa’s ultimate stage for high-octane, adrenaline-pumping
+                            basketball events, bringing together elite athletes, electrifying street culture, and the energy
+                            of Africa’s most vibrant cities.
+                        </p>
+                        <p class="mt-8">
+                            We don’t just host games—we create unforgettable moments where hoops meet hype,
+                            competition meets culture, and every event is a festival of music, fashion, and raw talent. Our
+                            mission? To make Africa the heartbeat of global 3x3 basketball and cement its place among
+                            the sport’s elite. This is more than basketball—this is a revolution.
+                        </p>
                     </div>
                     <div>
-                        <p>From grassroots programs to professional leagues, Bounce Africa is committed to developing basketball at all levels. We work with local communities, schools, and organizations to promote the sport and provide resources for aspiring players.</p>
-                        <p class="mt-8">Our events are more than just games; they are celebrations of basketball culture. With live entertainment, fan engagement activities, and opportunities to meet your favorite players, Bounce Africa events are unforgettable experiences for everyone.</p>
+                        <p> A Game Unlike Any Other – Picture fast-paced battles under the city lights, the beat of
+                            African drums fueling the action, and a crowd that turns up like it’s the finals every time.
+                            That’s Bounce Africa—where street ball meets showtime, and every play is a highlight!
+                        </p>
+
                     </div>
                 </div>
 
