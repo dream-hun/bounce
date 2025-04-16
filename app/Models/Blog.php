@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
@@ -8,9 +10,15 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Blog extends Model implements HasMedia
+final class Blog extends Model implements HasMedia
 {
     use InteractsWithMedia;
+
+    public const STATUS_SELECT = [
+        'draft' => 'Draft',
+        'published' => 'Published',
+        'review' => 'Review',
+    ];
 
     public $table = 'blogs';
 
@@ -24,12 +32,6 @@ class Blog extends Model implements HasMedia
         'deleted_at',
     ];
 
-    public const STATUS_SELECT = [
-        'draft' => 'Draft',
-        'published' => 'Published',
-        'review' => 'Review',
-    ];
-
     protected $fillable = [
         'title',
         'slug',
@@ -39,11 +41,6 @@ class Blog extends Model implements HasMedia
         'updated_at',
         'deleted_at',
     ];
-
-    protected function serializeDate(DateTimeInterface $date): string
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
 
     public function registerMediaConversions(?Media $media = null): void
     {
@@ -61,5 +58,10 @@ class Blog extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

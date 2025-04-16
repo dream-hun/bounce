@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -13,7 +15,7 @@ use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
-class TeamController extends Controller
+final class TeamController extends Controller
 {
     use MediaUploadingTrait;
 
@@ -23,7 +25,7 @@ class TeamController extends Controller
 
         $teams = Team::with(['media'])->get();
 
-        return view('admin.teams.index', compact('teams'));
+        return view('admin.teams.index', ['teams' => $teams]);
     }
 
     public function create()
@@ -52,7 +54,7 @@ class TeamController extends Controller
     {
         abort_if(Gate::denies('team_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.teams.edit', compact('team'));
+        return view('admin.teams.edit', ['team' => $team]);
     }
 
     public function update(UpdateTeamRequest $request, Team $team)

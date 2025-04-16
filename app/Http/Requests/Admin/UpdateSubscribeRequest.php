@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateSubscribeRequest extends FormRequest
+final class UpdateSubscribeRequest extends FormRequest
 {
     public function authorize(): bool
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -11,7 +13,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class RolesController extends Controller
+final class RolesController extends Controller
 {
     public function index()
     {
@@ -19,7 +21,7 @@ class RolesController extends Controller
 
         $roles = Role::with(['permissions'])->get();
 
-        return view('admin.roles.index', compact('roles'));
+        return view('admin.roles.index', ['roles' => $roles]);
     }
 
     public function create()
@@ -28,7 +30,7 @@ class RolesController extends Controller
 
         $permissions = Permission::pluck('title', 'id');
 
-        return view('admin.roles.create', compact('permissions'));
+        return view('admin.roles.create', ['permissions' => $permissions]);
     }
 
     public function store(StoreRoleRequest $request)
@@ -47,7 +49,7 @@ class RolesController extends Controller
 
         $role->load('permissions');
 
-        return view('admin.roles.edit', compact('permissions', 'role'));
+        return view('admin.roles.edit', ['permissions' => $permissions, 'role' => $role]);
     }
 
     public function update(UpdateRoleRequest $request, Role $role)
@@ -64,7 +66,7 @@ class RolesController extends Controller
 
         $role->load('permissions');
 
-        return view('admin.roles.show', compact('role'));
+        return view('admin.roles.show', ['role' => $role]);
     }
 
     public function destroy(Role $role)

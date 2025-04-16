@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -11,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -39,11 +41,6 @@ class User extends Authenticatable
         'updated_at',
         'deleted_at',
     ];
-
-    protected function serializeDate(DateTimeInterface $date): string
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
 
     public function getIsAdminAttribute(): bool
     {
@@ -75,5 +72,10 @@ class User extends Authenticatable
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Traits;
 
+use Exception;
 use Illuminate\Http\Request;
 
 trait MediaUploadingTrait
@@ -31,12 +34,12 @@ trait MediaUploadingTrait
             if (! file_exists($path)) {
                 mkdir($path, 0755, true);
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
         }
 
         $file = $request->file('file');
 
-        $name = uniqid().'_'.trim($file->getClientOriginalName());
+        $name = uniqid().'_'.mb_trim($file->getClientOriginalName());
 
         $file->move($path, $name);
 

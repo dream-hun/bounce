@@ -19,10 +19,10 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-6">
-                <a href="{{route('welcome')}}" class="text-white hover:text-gray-300 font-semibold">HOME</a>
-                <a href="{{route('games')}}" class="text-white hover:text-gray-300 font-semibold">GAMES</a>
-                <a href="{{route('blog')}}" class="text-white hover:text-gray-300 font-semibold">NEWS</a>
-                <a href="{{route('teams')}}" class="text-white hover:text-gray-300 font-semibold">TEAMS</a>
+                <a href="{{route('welcome')}}" class="text-white hover:text-orange-400 capitalize">Home</a>
+                <a href="{{route('games')}}" class="text-white hover:text-orange-400 capitalize">Games</a>
+                <a href="{{route('blog')}}" class="text-white hover:text-orange-400 capitalize">News</a>
+                <a href="{{route('teams')}}" class="text-white hover:text-orange-400 capitalize">Teams</a>
 
 
             </div>
@@ -30,9 +30,9 @@
             <!-- Desktop Right Menu -->
             <div class="hidden lg:flex items-center space-x-6">
 
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
-                <a href="https://bounceafrica.hustlesasa.shop" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
-                <a href="{{ route('about') }}" class="text-white hover:text-gray-300 font-semibold">ABOUT US</a>
+                <a href="#" class="text-white hover:text-orange-400 capitalize">3-on-3</a>
+                <a href="https://bounceafrica.hustlesasa.shop" class="text-white hover:text-gray-300 capitalize">Shop</a>
+                <a href="{{ route('about') }}" class="text-white hover:text-orange-400 capitalize">About us</a>
             </div>
         </div>
 
@@ -44,15 +44,15 @@
             x-transition:leave-start="opacity-100 transform translate-y-0"
             x-transition:leave-end="opacity-0 transform -translate-y-2" class="lg:hidden mt-4">
             <div class="flex flex-col space-y-4">
-                <a href="{{route('welcome')}}" class="text-white hover:text-gray-300 font-semibold">HOME</a>
-                <a href="{{route('games')}}" class="text-white hover:text-gray-300 font-semibold">GAMES</a>
-                <a href="{{route('blog')}}" class="text-white hover:text-gray-300 font-semibold">NEWS</a>
-                <a href="{{ route('teams') }}" class="text-white hover:text-gray-300 font-semibold">TEAMS</a>
+                <a href="{{route('welcome')}}" class="text-white hover:text-orange-400 capitalize">Home</a>
+                <a href="{{route('games')}}" class="text-white hover:text-orange-400 capitalize">Games</a>
+                <a href="{{route('blog')}}" class="text-white hover:text-orange-400 capitalize">News</a>
+                <a href="{{ route('teams') }}" class="text-white hover:text-orange-400 capitalize">Teams</a>
 
 
-                <a href="#" class="text-white hover:text-gray-300 font-semibold">3-ON-3</a>
-                <a href="https://bounceafrica.hustlesasa.shop/" class="text-white hover:text-gray-300 font-semibold">SHOP</a>
-                <a href="{{ route('about') }}" class="text-white hover:text-gray-300 font-semibold">ABOUT US</a>
+                <a href="#" class="text-white hover:text-gray-300 font-semibold">3-on-3</a>
+                <a href="https://bounceafrica.hustlesasa.shop/" class="text-white hover:text-orange-400 capitalize">Shop</a>
+                <a href="{{ route('about') }}" class="text-white hover:text-orange-400 capitalize">About us</a>
             </div>
         </div>
     </nav>

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -10,7 +12,7 @@ use App\Models\Setting;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class SettingController extends Controller
+final class SettingController extends Controller
 {
     public function index()
     {
@@ -18,7 +20,7 @@ class SettingController extends Controller
 
         $settings = Setting::all();
 
-        return view('admin.settings.index', compact('settings'));
+        return view('admin.settings.index', ['settings' => $settings]);
     }
 
     public function create()
@@ -30,7 +32,7 @@ class SettingController extends Controller
 
     public function store(StoreSettingRequest $request)
     {
-        $setting = Setting::create($request->all());
+        Setting::create($request->all());
 
         return redirect()->route('admin.settings.index');
     }
@@ -39,7 +41,7 @@ class SettingController extends Controller
     {
         abort_if(Gate::denies('setting_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.settings.edit', compact('setting'));
+        return view('admin.settings.edit', ['setting' => $setting]);
     }
 
     public function update(UpdateSettingRequest $request, Setting $setting)

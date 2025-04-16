@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -8,15 +10,15 @@ use App\Http\Requests\Admin\MassDestroyEventRequest;
 use App\Http\Requests\Admin\StoreEventRequest;
 use App\Http\Requests\Admin\UpdateEventRequest;
 use App\Models\Event;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
-class EventController extends Controller
+final class EventController extends Controller
 {
     use MediaUploadingTrait;
 
@@ -26,7 +28,7 @@ class EventController extends Controller
 
         $events = Event::with(['media'])->get();
 
-        return view('admin.events.index', compact('events'));
+        return view('admin.events.index', ['events' => $events]);
     }
 
     public function create()
@@ -47,7 +49,7 @@ class EventController extends Controller
         if ($request->input('featured_image', false)) {
             $event->addMedia(storage_path('tmp/uploads/'.basename($request->input('featured_image'))))
                 ->withManipulations([
-                    '*' => function ($image) {
+                    '*' => function ($image): void {
                         $image->fit(Fit::Contain, 200, 200);
                     },
                 ])
@@ -65,7 +67,7 @@ class EventController extends Controller
     {
         abort_if(Gate::denies('event_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.events.edit', compact('event'));
+        return view('admin.events.edit', ['event' => $event]);
     }
 
     /**

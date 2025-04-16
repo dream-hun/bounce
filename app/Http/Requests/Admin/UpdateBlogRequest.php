@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateBlogRequest extends FormRequest
+final class UpdateBlogRequest extends FormRequest
 {
     public function authorize(): bool
     {

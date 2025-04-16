@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -13,7 +15,7 @@ use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
-class PartnerController extends Controller
+final class PartnerController extends Controller
 {
     use MediaUploadingTrait;
 
@@ -23,7 +25,7 @@ class PartnerController extends Controller
 
         $partners = Partner::with(['media'])->get();
 
-        return view('admin.partners.index', compact('partners'));
+        return view('admin.partners.index', ['partners' => $partners]);
     }
 
     public function create()
@@ -52,7 +54,7 @@ class PartnerController extends Controller
     {
         abort_if(Gate::denies('partner_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.partners.edit', compact('partner'));
+        return view('admin.partners.edit', ['partner' => $partner]);
     }
 
     public function update(UpdatePartnerRequest $request, Partner $partner)
@@ -77,7 +79,7 @@ class PartnerController extends Controller
     {
         abort_if(Gate::denies('partner_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.partners.show', compact('partner'));
+        return view('admin.partners.show', ['partner' => $partner]);
     }
 
     public function destroy(Partner $partner)

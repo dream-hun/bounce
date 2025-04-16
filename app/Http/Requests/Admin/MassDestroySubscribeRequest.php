@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class MassDestroySubscribeRequest extends FormRequest
+final class MassDestroySubscribeRequest extends FormRequest
 {
     public function authorize(): true
     {

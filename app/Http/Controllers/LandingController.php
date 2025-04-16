@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
 
-class LandingController extends Controller
+final class LandingController extends Controller
 {
     /**
      * Handle the incoming request.

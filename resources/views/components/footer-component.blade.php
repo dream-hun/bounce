@@ -4,7 +4,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Brand Section -->
                 <div class="space-y-4">
-                    <img src="{{ asset('bounce_dark.webp') }}" alt="Bounce Logo" class="h-12">
+                    <img src="{{ asset('logo.webp') }}" alt="Bounce Logo" class="h-12">
                     <p class="text-gray-400 mt-4">Elevating African basketball to new heights. Join us in celebrating the
                         spirit of the game.</p>
                     <div class="flex space-x-4">
@@ -96,9 +96,9 @@
                     <form class="space-y-3">
                         <div class="flex flex-col space-y-2">
                             <input type="email" placeholder="Your email address"
-                                class="bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                class="bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
                             <button type="submit"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                                class="bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-lg transition duration-300">
                                 Subscribe
                             </button>
                         </div>
@@ -116,13 +116,13 @@
                     </div>
                     <div class="flex space-x-6">
                         <a href="#"
-                            class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy
+                            class="text-white hover:text-orange-400 text-sm transition-colors duration-300">Privacy
                             Policy</a>
                         <a href="#"
-                            class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of
+                            class="text-white hover:text-orange-400 text-sm transition-colors duration-300">Terms of
                             Service</a>
                         <a href="#"
-                            class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Cookie
+                            class="text-white hover:text-orange-400 text-sm transition-colors duration-300">Cookie
                             Policy</a>
                     </div>
                 </div>

@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreGameRequest extends FormRequest
+final class StoreGameRequest extends FormRequest
 {
     public function authorize(): bool
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use DateTimeInterface;
@@ -8,7 +10,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Partner extends Model implements HasMedia
+final class Partner extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
@@ -31,11 +33,6 @@ class Partner extends Model implements HasMedia
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date): string
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')->fit('crop', 50, 50);
@@ -52,5 +49,10 @@ class Partner extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

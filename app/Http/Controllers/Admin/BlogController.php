@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -13,7 +15,7 @@ use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
-class BlogController extends Controller
+final class BlogController extends Controller
 {
     use MediaUploadingTrait;
 
@@ -23,7 +25,7 @@ class BlogController extends Controller
 
         $blogs = Blog::with(['media'])->get();
 
-        return view('admin.blogs.index', compact('blogs'));
+        return view('admin.blogs.index', ['blogs' => $blogs]);
     }
 
     public function create()
@@ -52,7 +54,7 @@ class BlogController extends Controller
     {
         abort_if(Gate::denies('blog_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.blogs.edit', compact('blog'));
+        return view('admin.blogs.edit', ['blog' => $blog]);
     }
 
     public function update(UpdateBlogRequest $request, Blog $blog)

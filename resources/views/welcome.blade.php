@@ -20,7 +20,7 @@
                 <div class="max-w-xl">
                     <!-- Logo -->
                     <div class="flex items-center mb-10">
-                        <img src="{{ asset('bounce_icon.webp') }}" alt="Bounce icon" class="h-12 mr-4">
+                        <img src="{{ asset('2.png') }}" alt="Bounce icon" class="h-12 mr-4">
                         <h1 class="text-5xl md:text-7xl font-bold tracking-wider uppercase">{{ config('app.name') }}
                         </h1>
                     </div>
@@ -35,7 +35,7 @@
                     <!-- Buttons -->
                     <div class="flex space-x-4 mb-10">
                         <a href="#"
-                           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition duration-300">SCHEDULE</a>
+                           class="bg-orange-600 hover:bg--500 text-white font-semibold px-8 py-3 rounded-full transition duration-300">SCHEDULE</a>
                         <a href="#"
                            class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-semibold px-8 py-3 rounded-full transition duration-300">SUBSCRIBE</a>
                     </div>
@@ -96,6 +96,7 @@
             </button>
         </div>
     </div>
+    <x-tournment-component/>
 
     <!-- Upcoming Events Section -->
     <div class="bg-gray-800 py-16">

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -7,7 +9,7 @@ use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Game extends Model
+final class Game extends Model
 {
     public $table = 'games';
 
@@ -30,11 +32,6 @@ class Game extends Model
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date): string
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
-
     public function team_one(): BelongsTo
     {
         return $this->belongsTo(Team::class, 'team_one_id');
@@ -53,5 +50,10 @@ class Game extends Model
     public function setGameDateAttribute($value): void
     {
         $this->attributes['game_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+
+    protected function serializeDate(DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

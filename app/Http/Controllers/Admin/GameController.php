@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -11,7 +13,7 @@ use App\Models\Team;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class GameController extends Controller
+final class GameController extends Controller
 {
     public function index()
     {
@@ -19,7 +21,7 @@ class GameController extends Controller
 
         $games = Game::with(['team_one', 'team_two'])->get();
 
-        return view('admin.games.index', compact('games'));
+        return view('admin.games.index', ['games' => $games]);
     }
 
     public function create()
@@ -30,12 +32,12 @@ class GameController extends Controller
 
         $team_twos = Team::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.games.create', compact('team_ones', 'team_twos'));
+        return view('admin.games.create', ['team_ones' => $team_ones, 'team_twos' => $team_twos]);
     }
 
     public function store(StoreGameRequest $request)
     {
-        $game = Game::create($request->all());
+        Game::create($request->all());
 
         return redirect()->route('admin.games.index');
     }
@@ -50,7 +52,7 @@ class GameController extends Controller
 
         $game->load('team_one', 'team_two');
 
-        return view('admin.games.edit', compact('game', 'team_ones', 'team_twos'));
+        return view('admin.games.edit', ['game' => $game, 'team_ones' => $team_ones, 'team_twos' => $team_twos]);
     }
 
     public function update(UpdateGameRequest $request, Game $game)
@@ -66,7 +68,7 @@ class GameController extends Controller
 
         $game->load('team_one', 'team_two');
 
-        return view('admin.games.show', compact('game'));
+        return view('admin.games.show', ['game' => $game]);
     }
 
     public function destroy(Game $game)

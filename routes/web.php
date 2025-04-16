@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\HomeController;
@@ -30,7 +32,7 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function (): void {
     Route::get('/', HomeController::class)->name('home');
     // Permissions
     Route::delete('permissions/destroy', [PermissionsController::class, 'massDestroy'])->name('permissions.massDestroy');
@@ -49,16 +51,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('settings', SettingController::class)->except(['show']);
 
     // Team
-    Route::delete('teams/destroy', [\App\Http\Controllers\Admin\TeamController::class, 'massDestroy'])->name('teams.massDestroy');
+    Route::delete('teams/destroy', [App\Http\Controllers\Admin\TeamController::class, 'massDestroy'])->name('teams.massDestroy');
     Route::post('teams/media', [App\Http\Controllers\Admin\TeamController::class, 'storeMedia'])->name('teams.storeMedia');
-    Route::post('teams/ckmedia', [\App\Http\Controllers\Admin\TeamController::class, 'storeCKEditorImages'])->name('teams.storeCKEditorImages');
-    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class)->except(['show']);
+    Route::post('teams/ckmedia', [App\Http\Controllers\Admin\TeamController::class, 'storeCKEditorImages'])->name('teams.storeCKEditorImages');
+    Route::resource('teams', App\Http\Controllers\Admin\TeamController::class)->except(['show']);
 
     // Blog
-    Route::delete('blogs/destroy', [\App\Http\Controllers\Admin\BlogController::class, 'massDestroy'])->name('blogs.massDestroy');
-    Route::post('blogs/media', [\App\Http\Controllers\Admin\BlogController::class, 'storeMedia'])->name('blogs.storeMedia');
-    Route::post('blogs/ckmedia', [\App\Http\Controllers\Admin\BlogController::class, 'storeCKEditorImages'])->name('blogs.storeCKEditorImages');
-    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class)->except(['show']);
+    Route::delete('blogs/destroy', [App\Http\Controllers\Admin\BlogController::class, 'massDestroy'])->name('blogs.massDestroy');
+    Route::post('blogs/media', [App\Http\Controllers\Admin\BlogController::class, 'storeMedia'])->name('blogs.storeMedia');
+    Route::post('blogs/ckmedia', [App\Http\Controllers\Admin\BlogController::class, 'storeCKEditorImages'])->name('blogs.storeCKEditorImages');
+    Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class)->except(['show']);
 
     // Event
     Route::delete('events/destroy', [EventController::class, 'massDestroy'])->name('events.massDestroy');
@@ -76,10 +78,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('subscribes', SubscribeController::class);
 
     // Game
-    Route::delete('games/destroy', [\App\Http\Controllers\Admin\GameController::class, 'GameController@massDestroy'])->name('games.massDestroy');
-    Route::resource('games', \App\Http\Controllers\Admin\GameController::class);
+    Route::delete('games/destroy', [App\Http\Controllers\Admin\GameController::class, 'GameController@massDestroy'])->name('games.massDestroy');
+    Route::resource('games', App\Http\Controllers\Admin\GameController::class);
 });
-Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth']], function (): void {
     // Change password
     if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
         Route::get('password', [ChangePasswordController::class, 'edit'])->name('password.edit');
